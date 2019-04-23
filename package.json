@@ -16,5 +16,8 @@
   "bugs": {
     "url": "https://github.com/robjpar/friend-finder/issues"
   },
-  "homepage": "https://github.com/robjpar/friend-finder#readme"
+  "homepage": "https://github.com/robjpar/friend-finder#readme",
+  "dependencies": {
+    "express": "^4.16.4"
+  }
 }
