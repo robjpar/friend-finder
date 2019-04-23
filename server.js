@@ -7,8 +7,8 @@ app.use(express.urlencoded({
 }));
 app.use(express.json());
 
-require('./routes/htmlRoutes')(app);
 require('./routes/apiRoutes')(app);
+require('./routes/htmlRoutes')(app);
 
 const port = process.env.PORT || 8080;
 
