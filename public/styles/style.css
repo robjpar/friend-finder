@@ -1,0 +1,10 @@
+/* Styling customization */
+
+body {
+  background-image: url('/images/white-waves/white-waves.png');
+}
+
+/* Hide the scroll bar */
+body::-webkit-scrollbar {
+  width: 0 !important
+}
