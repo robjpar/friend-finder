@@ -1,3 +1,4 @@
+// Sample data
 module.exports = [{
   "nickname": "Jay Dog",
   "photoLink": "http://lorempixel.com/output/animals-q-c-300-200-8.jpg",

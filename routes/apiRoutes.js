@@ -1,19 +1,26 @@
 const friends = require('../data/friends');
 
 module.exports = (app) => {
+  // API GET route
   app.get('/api/friends', (req, res) => res.json(friends));
 
+  // API POST route
   app.post('/api/friends', (req, res) => {
     friends.push(req.body);
+
+    // Return the best match object to be presented to the user
     res.json(findBestMatch(friends));
   });
 
 };
 
+// Find the best match, for which the sum of squared differences is smallest
 const findBestMatch = (friends) => {
+  // The current user is the last one in the array
   let latestResults = friends[friends.length - 1].results;
   latestResults = latestResults.map((result => parseInt(result)));
 
+  // Other users
   let results = friends[0].results;
   results = results.map((result => parseInt(result)));
 
@@ -35,6 +42,8 @@ const findBestMatch = (friends) => {
   return friends[minIndex];
 };
 
+// Calculate the sum of squared differences between the numerical
+// values of the corresponding answers
 const sumSquaredDifferences = (vector1, vector2) => {
   let sum = 0;
   for (let i = 0; i < vector1.length; i++) {

@@ -1,3 +1,4 @@
+// Survey questions
 const questions = [
   'Red or Blue?',
   'Sweet or Sour?',
@@ -11,6 +12,7 @@ const questions = [
   'Beer or Margarita?'
 ];
 
+// Generating the sliders
 $(window).on('load', () =>
   questions.forEach((question, index) =>
     $('#questions').append(
@@ -22,12 +24,14 @@ $(window).on('load', () =>
   )
 );
 
+// Functionality of the "Find your bast match button"
 $('#submit-button').click((event) => {
   event.preventDefault();
 
   const nickname = $('#nickname').val().trim();
   const photoLink = $('#photo-link').val().trim();
 
+  // Input validation
   if (!nickname) {
     $('#nickname-label').text('Provide Your Nickname').css('color', 'red');
     alert('Provide your nickname!');
@@ -39,18 +43,20 @@ $('#submit-button').click((event) => {
     return;
   }
 
+  // Retrieving the values of sliders
   const results = [];
-
   $('.form-control-range').each(function() { // arrow function doesn't work here because it doesn't bind `this`
     results.push($(this).val());
   });
 
+  // The current user object
   const newFriend = {
     nickname: nickname,
     photoLink: photoLink,
     results: results
   };
 
+  // Posting the data to the server
   $.post("/api/friends", newFriend, (bestFriend) => {
     $('#result-photo').empty().append(`<img src="${bestFriend.photoLink}" alt="${bestFriend.nickname}">`);
     $('#result-nickname').empty().append(`<h3>${bestFriend.nickname}</h3>`);
