@@ -7,6 +7,10 @@ app.use(express.urlencoded({
 }));
 app.use(express.json());
 
+const path = require('path');
+
+app.use(express.static(path.join(__dirname, 'public')));
+
 require('./routes/apiRoutes')(app);
 require('./routes/htmlRoutes')(app);
 
