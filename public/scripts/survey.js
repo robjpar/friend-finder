@@ -14,8 +14,8 @@ const questions = [
 $(window).on('load', () =>
   questions.forEach((question, index) =>
     $('#questions').append(
-      `<div class="form-group">
-         <label for="question-${index}">${question}</label>
+      `<div class="form-group mt-5">
+         <label for="question-${index}"><h5>${question}</h5></label>
          <input type="range" class="form-control-range" id="question-${index}" min="0" max="100" value="50" step="1">
      </div>`
     )
