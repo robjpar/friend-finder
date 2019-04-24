@@ -1,14 +1,14 @@
 const questions = [
   'Red or Blue?',
-  'Sweet or Sour',
-  'Sea or Mountains',
-  'Sunny or Cloudy',
-  'Mild or Spicy',
-  'Walk or Ride',
-  'Horror or Drama',
-  'Tea or Coffee',
-  'Shrimp or Steak',
-  'Beer or Margarita'
+  'Sweet or Sour?',
+  'Sea or Mountains?',
+  'Sunny or Cloudy?',
+  'Mild or Spicy?',
+  'Walk or Ride?',
+  'Comedy or Drama?',
+  'Tea or Coffee?',
+  'Shrimp or Steak?',
+  'Beer or Margarita?'
 ];
 
 $(window).on('load', () =>
